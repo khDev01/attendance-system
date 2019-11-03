@@ -1,11 +1,13 @@
 // Attendance Register system 
 // created: 13/08/19
+// updated: 02/11/2019
 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO; // added for saving to txt file
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,6 +100,10 @@ namespace Attendace1v1
         // Save
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // use '\\' to escape first back slash in file path
+            string path = "C:\\test.txt";
+            string selectedValue = comboBox1.SelectedItem.ToString();
+            File.AppendAllText(path, selectedValue);
 
         }
 
